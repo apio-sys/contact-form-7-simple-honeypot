@@ -80,7 +80,7 @@ function cf7_simple_honeypot_add_admin_menu() {
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'apd_settings_link' );
 function apd_settings_link( array $links ) {
     $url = get_admin_url() . "admin.php?page=contact-form-7-simple-honeypot";
-    $settings_link = '<a href="' . $url . '">' . __('Settings', 'textdomain') . '</a>';
+    $settings_link = '<a href="' . $url . '">' . __('Settings', 'contact-form-7-simple-honeypot') . '</a>';
       $links[] = $settings_link;
     return $links;
 }
