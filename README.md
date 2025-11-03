@@ -1,4 +1,4 @@
-# Why this plugin?
+# Description
 
 I like to use Contact Form 7 on most of my WordPress sites. It's a powerful form manager that suits all my needs. I don't like to use external calls to protect the forms from spam submissions though (like reCaptcha or hCaptcha) and don't want to present a manual captcha to a user (math or other puzzle). Since I couldn't find a really simple honeypot script that works on most entries, I created one here. Hopefully it's useful to someone else also.
 
