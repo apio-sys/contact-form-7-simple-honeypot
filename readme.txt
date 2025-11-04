@@ -30,3 +30,7 @@ I like to use Contact Form 7 on most of my WordPress sites. It's a powerful form
 - A Honeypot Field
 - Time-Based Validation
 - Basic Content Analysis
+
+== Changelog ==
+= 0.9.1 - 2025-11-04 =
+* First production release.
