@@ -1,12 +1,12 @@
-=== Basic Honeypot for Contact Form 7 ===
+=== Apio systems Honeypot for Contact Form 7 ===
 Contributors: apiosys
 Tags: honeypot, antispam, forms
 Requires at least: 6.5
 Tested up to: 6.8
-Stable tag: 0.9.1
+Stable tag: 0.9.2
 Requires PHP: 7.2
 License: MIT
-License URI: https://github.com/apio-sys/cf7-basic-honeypot/blob/main/LICENSE
+License URI: https://github.com/apio-sys/apiosys-honeypot-cf7/blob/main/LICENSE
 
 Basic Honeypot plugin for Contact Form 7 to drastically reduce spam on form submissions without user interaction.
 
@@ -32,5 +32,5 @@ I like to use Contact Form 7 on most of my WordPress sites. It's a powerful form
 - Basic Content Analysis
 
 == Changelog ==
-= 0.9.1 - 2025-11-04 =
+= 0.9.2 - 2025-11-14 =
 * First production release.
