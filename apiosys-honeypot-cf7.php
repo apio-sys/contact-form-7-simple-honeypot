@@ -44,8 +44,8 @@ add_action('admin_menu', 'apiosys_honeypot_cf7_add_admin_menu');
 function apiosys_honeypot_cf7_add_admin_menu() {
     add_submenu_page(
         'wpcf7',
-        __('Basic Honeypot', 'apiosys-honeypot-cf7'),
-        __('Basic Honeypot', 'apiosys-honeypot-cf7'),
+        __('Honeypot', 'apiosys-honeypot-cf7'),
+        __('Honeypot', 'apiosys-honeypot-cf7'),
         'manage_options',
         'apiosys-honeypot-cf7',
         'apiosys_honeypot_cf7_settings_page'
