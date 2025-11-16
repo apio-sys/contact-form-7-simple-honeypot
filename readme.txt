@@ -3,7 +3,7 @@ Contributors: apiosys
 Tags: honeypot, antispam, forms
 Requires at least: 6.5
 Tested up to: 6.8
-Stable tag: 0.9.2
+Stable tag: 0.9.3
 Requires PHP: 7.2
 License: MIT
 License URI: https://github.com/apio-sys/apiosys-honeypot-cf7/blob/main/LICENSE
@@ -32,5 +32,8 @@ I like to use Contact Form 7 on most of my WordPress sites. It's a powerful form
 - Basic Content Analysis
 
 == Changelog ==
+= 0.9.3 - 2025-11-16 =
+* FIX: CSS resource version.
+
 = 0.9.2 - 2025-11-14 =
 * First production release.

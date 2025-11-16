@@ -408,7 +408,7 @@ function apiosys_honeypot_cf7_content_analysis($spam, $submission) {
 add_action('wp_enqueue_scripts', 'apiosys_honeypot_cf7_enqueue_styles');
 function apiosys_honeypot_cf7_enqueue_styles() {
     // Register the style handle (no file needed for inline-only styles)
-    wp_register_style('apiosys-honeypot-cf7', false);
+    wp_register_style('apiosys-honeypot-cf7', false, array(), '0.9.3');
     
     // Enqueue the registered style
     wp_enqueue_style('apiosys-honeypot-cf7');
