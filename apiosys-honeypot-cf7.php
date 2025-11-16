@@ -3,7 +3,7 @@
  * Plugin Name: Apio systems Honeypot for Contact Form 7
  * Plugin URI: https://github.com/apio-sys/apiosys-honeypot-cf7
  * Description: Basic Honeypot plugin for Contact Form 7 to drastically reduce spam on form submissions without user interaction. Includes honeypot field, time-based validation, and content analysis. Store results in Flamingo.
- * Version: 0.9.2
+ * Version: 0.9.3
  * Author: Joris Le Blansch
  * Author URI: https://apio.systems
  * License: MIT
@@ -210,7 +210,7 @@ function apiosys_honeypot_cf7_add_shortcode() {
 function apiosys_honeypot_cf7_handler($tag) {
     $field_name = apiosys_honeypot_cf7_get_option('honeypot_field_name', 'your-website');
     $html = sprintf(
-        '<span class="wpcf7-form-control-wrap" data-name="%1$s" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+        '<span class="wpcf7-form-control-wrap apiosys-honeypot-wrap" data-name="%1$s">
             <label>Website (optional)</label>
             <input type="text" name="%1$s" value="" size="40" class="wpcf7-form-control" tabindex="-1" autocomplete="off" aria-hidden="true" />
         </span>',
@@ -404,12 +404,22 @@ function apiosys_honeypot_cf7_content_analysis($spam, $submission) {
     return $spam;
 }
 
-// Add custom CSS to ensure honeypot is completely hidden
-add_action('wp_head', 'apiosys_honeypot_cf7_css');
-function apiosys_honeypot_cf7_css() {
+// Enqueue frontend styles using WordPress best practices
+add_action('wp_enqueue_scripts', 'apiosys_honeypot_cf7_enqueue_styles');
+function apiosys_honeypot_cf7_enqueue_styles() {
+    // Register the style handle (no file needed for inline-only styles)
+    wp_register_style('apiosys-honeypot-cf7', false);
+    
+    // Enqueue the registered style
+    wp_enqueue_style('apiosys-honeypot-cf7');
+    
+    // Get the honeypot field name from settings
     $field_name = apiosys_honeypot_cf7_get_option('honeypot_field_name', 'your-website');
-    echo '<style>
-        .wpcf7-form-control-wrap[data-name="' . esc_attr($field_name) . '"] {
+    
+    // Build the inline CSS
+    $inline_css = sprintf(
+        '.wpcf7-form-control-wrap[data-name="%s"],
+        .apiosys-honeypot-wrap {
             position: absolute !important;
             left: -9999px !important;
             width: 1px !important;
@@ -417,6 +427,10 @@ function apiosys_honeypot_cf7_css() {
             overflow: hidden !important;
             opacity: 0 !important;
             pointer-events: none !important;
-        }
-    </style>';
+        }',
+        esc_attr($field_name)
+    );
+    
+    // Add inline CSS to the registered style
+    wp_add_inline_style('apiosys-honeypot-cf7', $inline_css);
 }
