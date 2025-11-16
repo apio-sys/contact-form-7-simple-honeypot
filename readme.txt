@@ -35,6 +35,13 @@ I like to use Contact Form 7 on most of my WordPress sites. It's a powerful form
 
 It has been tested on several high-traffic WP sites. I see a return of ~ 1 ‰ (i.e. 1 in a thousand) of spam going through. That usually corresponds to humans paid to fill forms or sophisticated bots. Please feel free to contribute to make it even better.
 
+== Screenshots ==
+
+1. Spam caught when Honeypot field was filled.
+2. Spam caught when the form was submitted too quickly.
+3. Spam caught when too many URLs are present in the message fields.
+4. Spam caught when certain keywords are detected.
+
 == Changelog ==
 = 0.9.3 - 2025-11-16 =
 * FIX: CSS resource version.
